@@ -4,12 +4,12 @@
  *
  * An open source application development framework for PHP 5.1.6 or newer
  *
- * @package		CodeIgniter
- * @author		ExpressionEngine Dev Team
- * @copyright	Copyright (c) 2008 - 2011, EllisLab, Inc.
- * @license		http://codeigniter.com/user_guide/license.html
+ * @package			CodeIgniter
+ * @author			ExpressionEngine Dev Team
+ * @copyright		Copyright (c) 2008 - 2011, EllisLab, Inc.
+ * @license			http://codeigniter.com/user_guide/license.html
  * @link			http://codeigniter.com
- * @since		Version 1.0
+ * @since			Version 1.0
  * @filesource
  */
 
@@ -24,10 +24,10 @@
  CodeIgniter uses a front controller so paths are always relative to the main site index.
 
  *
- * @package		CodeIgniter
- * @subpackage	Helpers
+ * @package			CodeIgniter
+ * @subpackage		Helpers
  * @category		Helpers
- * @author		Yuri Citra Pratama ( yuripertamax@gmail.com )
+ * @author			Yuri Citra Pratama ( yuripertamax@gmail.com )
  * @link			http:/github.com/yuripertamax/ci_dir_helper
  */
 
@@ -58,17 +58,17 @@ if ( ! function_exists('get_items_list'))
 			$scanned_dir = array_diff(scandir($path), array('..', '.'));
 
 			foreach($scanned_dir as $items)
-	      {
-	      	if($param=='file')
 	      	{
-	      		if(is_file($items))
+	      		if($param=='file')
+	      		{
+	      			if(is_file($items))
 					{
 						$result[] = $items;
 					}
 				}
 				if($param=='dir')
-	      	{
-	      		if(!is_file($items))
+	      		{
+	      			if(!is_file($items))
 					{
 						$result[] = $items;
 					}
@@ -101,17 +101,17 @@ if ( ! function_exists('get_count'))
 		$scanned_dir = array_diff(scandir($path), array('..', '.', '.svn', '.git'));
 
 		foreach($scanned_dir as $items)
-      {
-      	if($param=='file')
       	{
-      		if(is_file($items))
+	      	if($param=='file')
+	      	{
+      			if(is_file($items))
 				{
 					$result[] = $items;
 				}
 			}
 			if($param=='dir')
-      	{
-      		if(!is_file($items))
+      		{
+      			if(!is_file($items))
 				{
 					$result[] = $items;
 				}
@@ -154,22 +154,21 @@ if ( ! function_exists('get_list_path'))
       	$items = $path."/".$items;
 
 			if($param=='file')
-      	{
-
-      		if(is_file($items))
+      		{
+      			if(is_file($items))
 				{
 					$result_path[] = $items;
 				}
 			}
 			else if($param=='dir')
-      	{
-      		if(!is_file($items))
+      		{
+      			if(!is_file($items))
 				{
 					$result_path[] = $items;
 				}
 			}
 			else if($param=='')
-      	{
+      		{
 				$result_path[] = $items;
 			}
 			else
@@ -177,7 +176,6 @@ if ( ! function_exists('get_list_path'))
 				$result_path = FALSE;
 			}
       }
-
       return $result_path;
 	}
 }
